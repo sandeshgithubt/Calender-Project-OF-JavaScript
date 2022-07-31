@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+
+    <link rel="icon"  href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/512/calendar-icon.png">
+
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body onload="renderDate()">
+
+    <header class="wrapper">
+
+        <div class="calender">
+
+            <section>
+
+                <div class="month">
+
+                    <div class="prev" onclick="moveDate('prev')">
+                        <span>&#10094</span>
+                    </div>
+
+                    <div>
+                        <h2 id="month">July</h2>
+                        <p id="date_start"></p>
+                    </div>
+
+                    <div class="next" onclick="moveDate('next')">
+                        <span>&#10095</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div class="days">
+
+             
+
+
+            </div>
+
+
+        </div>
+    </header>
+    
+
+</body>
+    <script src="./script.js"></script>
+</html>

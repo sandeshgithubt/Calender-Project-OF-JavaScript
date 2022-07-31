@@ -1,0 +1,141 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+.wrapper{
+    display: flex;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(212, 174, 180);
+}
+
+.calender{
+    width:70%;
+   /* height:80vh; */
+    margin: auto;
+    background-color: rgb(189, 137, 137);
+    padding-bottom: 5px;
+    box-shadow: 5px 7px 9px  7px rgb(26, 24, 24);
+    /* overflow: hidden; */
+}
+
+/* */
+.month{
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    text-align: center;
+    background-color: rgb(248, 93, 37);
+    border-bottom: 5px solid rgb(51, 186, 240);
+    padding:35px 30px;
+    user-select: none;
+   
+}
+
+.month h2{
+    color:#fff;
+    font-weight: 700;
+}
+.month p{
+    margin-top:5px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.weekdays{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black ;
+    border-bottom: 5px solid rgb(51, 186, 240);
+    color:white;
+    padding:10px;
+    user-select: none;
+    
+}
+
+.days{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 0px;
+    user-select: none;
+}
+
+.weekdays div, .days div{
+    width:14.28%;
+    text-align: center;
+    user-select: none;
+}
+.days div{
+    
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    transition: 0.8s;
+}
+
+.today{
+    background-color:rgb(116, 172, 33);
+    /* font-weight: 400; */
+    color:#fff;
+}
+
+.days div:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    color:black;
+}
+
+.previous{
+        color:rgb(4, 65, 4);
+}
+
+#month{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.prev , .next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height:40px;
+    background-color: rgba(131, 18, 18, 0.2);
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev:hover,
+.next:hover{
+    cursor: pointer;
+    background-color: rgba(248, 246, 246, 0.4);
+}
+
+@media(max-width:500px){
+    
+    html,body{
+       overflow-x: hidden;
+   }
+
+   .calender{
+    width:90%;
+    height: auto;
+    margin: auto;
+   }
+
+   .weekdays{
+    
+    font-size: 10px;
+    padding: 10px 5px;
+    
+   }
+}

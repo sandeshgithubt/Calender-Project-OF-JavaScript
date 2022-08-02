@@ -24,8 +24,6 @@ body {
   #header {
     padding: 10px;
     color: rgb(255, 105, 11);
-  
-    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     font-size: 30px;

@@ -1,141 +1,245 @@
 *{
-    margin:0px;
-    padding:0px;
-    box-sizing: border-box;
-    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
 }
 
-
-.wrapper{
+body {
     display: flex;
-    width:100vw;
-    height:100vh;
-    background-color: rgb(212, 174, 180);
-}
-
-.calender{
-    width:70%;
-   /* height:80vh; */
-    margin: auto;
-    background-color: rgb(189, 137, 137);
-    padding-bottom: 5px;
-    box-shadow: 5px 7px 9px  7px rgb(26, 24, 24);
-    /* overflow: hidden; */
-}
-
-/* */
-.month{
+    margin: 20px auto;
+    justify-content: center;
+    background-color: rgb(226, 236, 240);
+  }
+  
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px black;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #header {
+    padding: 10px;
+    color: rgb(255, 105, 11);
+  
+    font-family: sans-serif;
     display: flex;
-   
     justify-content: space-between;
-    align-items: center;
-    width:100%;
-    text-align: center;
-    background-color: rgb(248, 93, 37);
-    border-bottom: 5px solid rgb(51, 186, 240);
-    padding:35px 30px;
-    user-select: none;
-   
-}
-
-.month h2{
-    color:#fff;
-    font-weight: 700;
-}
-.month p{
-    margin-top:5px;
-    color: #fff;
-    font-weight: 400;
-}
-
-.weekdays{
+    font-size: 30px;
+  }
+  #header button {
+    background-color:coral;
+  }
+  #container {
+    width: 770px;
+  }
+  #weekdays {
+    width: 100%;
     display: flex;
-    
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: black ;
-    border-bottom: 5px solid rgb(51, 186, 240);
-    color:white;
-    padding:10px;
-    user-select: none;
-    
-}
-
-.days{
+    color: blueviolet;
+    font-size: 25px;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    font-weight: 500;
-    padding: 10px 0px;
-    user-select: none;
-}
-
-.weekdays div, .days div{
-    width:14.28%;
-    text-align: center;
-    user-select: none;
-}
-.days div{
-    
-    margin-bottom: 10px;
-    padding: 10px 0px;
-    transition: 0.8s;
-}
-
-.today{
-    background-color:rgb(116, 172, 33);
-    /* font-weight: 400; */
-    color:#fff;
-}
-
-.days div:hover{
-    background-color: lightgray;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
     cursor: pointer;
-    color:black;
-}
-
-.previous{
-        color:rgb(4, 65, 4);
-}
-
-#month{
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.prev , .next{
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 4px black;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width:40px;
-    height:40px;
-    background-color: rgba(131, 18, 18, 0.2);
-    border-radius: 50%;
-    user-select: none;
-}
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: rgb(13, 233, 233);
+  }
 
-.prev:hover,
-.next:hover{
-    cursor: pointer;
-    background-color: rgba(248, 246, 246, 0.4);
-}
 
-@media(max-width:500px){
-    
-    html,body{
-       overflow-x: hidden;
-   }
+  
+  .day + #currentDay {
+    background-color:greenyellow;
+  }
 
-   .calender{
-    width:90%;
-    height: auto;
-    margin: auto;
-   }
 
-   .weekdays{
-    
-    font-size: 10px;
-    padding: 10px 5px;
-    
-   }
-}
+  .event {
+    font-size: 20px;
+    padding: 3px;
+    background-color: yellowgreen;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: grey !important;
+    box-shadow: none !important;
+  }
+  #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 20px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px black;
+  }
+  #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  #cancelButton, #deleteButton {
+    background-color: red;
+  }
+  #saveButton, #closeButton {
+    background-color: blue;
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+
+  @media(max-width:800px){
+    html{
+        overflow-x: hidden;
+
+    }
+
+    body {
+        display: flex;
+        margin: 15px auto;
+        justify-content: center;
+        background-color: rgb(226, 236, 240);
+      }
+
+    #container {
+        width:100vw;
+      }
+
+    #weekdays {
+        width: 100%;
+        display: flex;
+        color: blueviolet;
+        font-size: 15px;
+      }
+      #weekdays div {
+        width: 100px;
+        padding: 5px 0px;
+      }
+    #calendar {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        flex-wrap:wrap;
+    }
+    .day {
+        width: 50px;
+        padding: 5px;
+        height: 50px;
+        cursor: pointer;
+        box-sizing: border-box;
+        background-color: white;
+        margin: 5px;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+      }
+
+      /* .event {
+        font-size: 20px;
+        padding: 3px;
+        background-color: yellowgreen;
+        color: white;
+        border-radius: 5px;
+        max-height: 55px;
+        overflow: hidden;
+      }
+      .padding {
+        cursor: default !important;
+        background-color: grey !important;
+        box-shadow: none !important;
+      }
+      #newEventModal, #deleteEventModal {
+        display: none;
+        z-index: 20;
+        padding: 25px 0px;
+        background-color: #e8f4fa;
+        box-shadow: 0px 0px 3px black;
+        border-radius: 20px;
+        width: 350px;
+        top: 100px;
+        left: calc(50% - 175px);
+        position: absolute;
+        font-family: sans-serif;
+      }
+      #eventTitleInput {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 25px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 3px black;
+      }
+      #eventTitleInput.error {
+        border: 2px solid red;
+      }
+      #cancelButton, #deleteButton {
+        background-color: red;
+      }
+      #saveButton, #closeButton {
+        background-color: blue;
+      }
+      #eventText {
+        font-size: 14px;
+      }
+      #modalBackDrop {
+        display: none;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        background-color: rgba(0,0,0,0.8);
+      } */
+  }

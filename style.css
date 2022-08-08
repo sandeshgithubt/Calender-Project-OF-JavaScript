@@ -24,6 +24,8 @@ body {
   #header {
     padding: 10px;
     color: rgb(255, 105, 11);
+  
+    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     font-size: 30px;
@@ -38,11 +40,14 @@ body {
     width: 100%;
     display: flex;
     color: blueviolet;
-    font-size: 25px;
+    font-size: 22px;
   }
   #weekdays div {
     width: 100px;
     padding: 10px;
+  }
+  #weekday-responsive{
+    display: none;
   }
   #calendar {
     width: 100%;
@@ -135,7 +140,7 @@ body {
   }
 
 
-  @media(max-width:800px){
+  @media(max-width:765px){
     html{
         overflow-x: hidden;
 
@@ -153,12 +158,15 @@ body {
       }
 
     #weekdays {
+       display: none;
+      }
+      #weekday-responsive{
         width: 100%;
         display: flex;
         color: blueviolet;
-        font-size: 15px;
+        font-size: 18px;
       }
-      #weekdays div {
+      #weekday-responsive div {
         width: 100px;
         padding: 5px 0px;
       }
@@ -169,75 +177,19 @@ body {
         flex-wrap:wrap;
     }
     .day {
-        width: 50px;
-        padding: 5px;
+        width: 12%;
+        
+        padding: 3px;
         height: 50px;
         cursor: pointer;
         box-sizing: border-box;
         background-color: white;
-        margin: 5px;
+        margin: 3px;
         display: flex;
+        flex-wrap: wrap;
         flex-direction:column;
         justify-content: space-evenly;
       }
 
-      /* .event {
-        font-size: 20px;
-        padding: 3px;
-        background-color: yellowgreen;
-        color: white;
-        border-radius: 5px;
-        max-height: 55px;
-        overflow: hidden;
-      }
-      .padding {
-        cursor: default !important;
-        background-color: grey !important;
-        box-shadow: none !important;
-      }
-      #newEventModal, #deleteEventModal {
-        display: none;
-        z-index: 20;
-        padding: 25px 0px;
-        background-color: #e8f4fa;
-        box-shadow: 0px 0px 3px black;
-        border-radius: 20px;
-        width: 350px;
-        top: 100px;
-        left: calc(50% - 175px);
-        position: absolute;
-        font-family: sans-serif;
-      }
-      #eventTitleInput {
-        padding: 10px;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 25px;
-        border-radius: 3px;
-        outline: none;
-        border: none;
-        box-shadow: 0px 0px 3px black;
-      }
-      #eventTitleInput.error {
-        border: 2px solid red;
-      }
-      #cancelButton, #deleteButton {
-        background-color: red;
-      }
-      #saveButton, #closeButton {
-        background-color: blue;
-      }
-      #eventText {
-        font-size: 14px;
-      }
-      #modalBackDrop {
-        display: none;
-        top: 0px;
-        left: 0px;
-        z-index: 10;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        background-color: rgba(0,0,0,0.8);
-      } */
+     
   }

@@ -190,6 +190,10 @@ body {
         flex-direction:column;
         justify-content: space-evenly;
       }
+      
+        #newEventModal{
+            width:300px;
+            margin: auto;
 
      
   }

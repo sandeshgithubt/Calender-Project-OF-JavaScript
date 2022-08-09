@@ -13,7 +13,8 @@
 * JavaScript
 
 ## Description
-This is web based live App , and this is responsive by nature by small device, with the use of fronted technologies, date changed accordingly 
+This is web based live App of Calendar , and this is responsive by nature by small device, with the use of fronted technologies,
+    date changed accordingly, and also we can add event on particular date and also delete it. 
 whatever the present date shows in green color.
 
 ## Setup/Installation Requirements
